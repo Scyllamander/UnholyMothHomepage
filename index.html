@@ -22,6 +22,12 @@
             padding: 20px;
             border: 2px solid #333;
             box-shadow: 0 0 20px #00ff0033;
+
+        }
+
+        .intro-txt {
+            text-align: center;
+            margin-bottom: 20px;
         }
         
         h1 {
@@ -126,16 +132,30 @@
             background-color: #ff6600;
             margin-right: 5px;
         }
+
+        #header-image {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        #header-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            border-radius: 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>UNHOLY MOTH</h1>
-        
-        <p>Hi my name is Mothie<br><br>Today is <span id="current-date"></span>.</p>
-        
+        <div id="header-image"><img src="assets/MothHeader.png"></div>
+        <div class="intro-txt">
+        <p>Hi my name is Mothie</p>
         <p>I just like computers</p>
-        
+        <p>Today is <span id="current-date"></span>.
+        </div>
         <div class="facts">
             <h2>Quick Bio:</h2>
             <ul>
@@ -168,7 +188,7 @@
         
         <p style="text-align: center; margin-top: 30px; color: #666;">
             Made with evil and malice | 
-            <a href="https://github.com/yourusername">GitHub</a>
+            <a href="https://github.com/scyllamander">GitHub</a>
         </p>
     </div>
     
