@@ -273,6 +273,12 @@
             text-align: center;
             margin-top: 20px;
         }
+        .clicker {
+            text-align: right;
+            margin-top: 5px;
+            margin-right: 30%;
+
+        }
     </style>
 </head>
 <body>
@@ -301,7 +307,7 @@
                 </div>
                 
                 <p style="text-align: center; margin-top: 30px; color: #666;">
-                    Made with evil and malice | 
+                    Made with evil and malice | 2025
                 </p>
         <div class="kofi">
             <!--    <a href='https://ko-fi.com/D1D41JA8SQ' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> -->
@@ -321,6 +327,19 @@
             <a href="https://bsky.app/profile/unholymoth.org">Bluesky</a>
             <a href="https://ko-fi.com/unholymothie">Kofi</a>
         </div>
+    </div>
+
+    <div class="clicker">
+        <p>Clicks: <span id="score">0</span></p>
+        <button id="click-button">Click Me!</button>
+
+        <script>
+            let score = 0;
+            function increaseScore() {
+                score++;
+                document.getElementById('score').textContent = score;
+            }
+        </script>
     </div>
     
 
