@@ -8,25 +8,37 @@
         body {
             font-family: 'Courier New', monospace;
             background-color: #000;
+            background-image: url('assets/REKithen.jpg');
             color: #00ff00;
-            margin: 0;
+            margin: 0 auto;
             padding: 20px;
             line-height: 1.6;
             font-size: 14px;
         }
-        
+
         .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+
+            margin: 0 auto;
+        }
+
+        .main-content {
             max-width: 800px;
             margin: 0 auto;
             background-color: #111;
             padding: 20px;
             border: 2px solid #333;
             box-shadow: 0 0 20px #00ff0033;
-
         }
 
-        .intro-txt {
-            text-align: center;
+        .date-text {
+            text-align: right
             margin-bottom: 20px;
         }
         
@@ -39,27 +51,28 @@
         }
         
         h2 {
-            color: #ff6600;
+            color: #ff00f2;
             border-bottom: 1px solid #333;
             padding-bottom: 5px;
-            margin-top: 30px;
+            margin-top: 10px;
         }
         
         a {
-            color: #00ccff;
+            color: #ffffff;
             text-decoration: underline;
         }
         
         a:hover {
-            color: #ffff00;
-            text-shadow: 0 0 5px #ffff0066;
+            color: #000000;
+            text-shadow: 0 0 5px #00ff00;
         }
         
         .facts {
-            background-color: #1a1a1a;
-            padding: 15px;
-            border-left: 3px solid #00ff00;
-            margin: 20px 0;
+
+            padding: 5px;
+ 
+            margin: 5px 0;
+          
         }
         
         .facts ul {
@@ -133,98 +146,191 @@
             margin-right: 5px;
         }
 
+        .banner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5px;
+            margin-bottom: 5px;
+            max-height: 10%;
+        }
+
         #header-image {
             text-align: center;
-            margin-bottom: 20px;
+            margin: 0 auto;
+            margin-bottom: 5px;
             width: 100%;
+            max-height: 10%;
+            align-content: center;
         }
+
         #header-image img {
-            width: 100%;
-            height: auto;
+            width: 50%;
+            height: 50%;
             display: block;
             margin: 0 auto;
             max-width: 100%;
+            max-height: 100%;
             border-radius: 0;
         }
-                .sidebar {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 220px;
-            height: 100%;
+        
+        /* Mobile styles */
+        .sidebar {
             background: #222;
             color: #fff;
-            padding: 20px 10px;
-            box-sizing: border-box;
-            overflow-y: auto;
+            padding: 20px;
+            margin-top: 30px;
+            border: 1px solid #00ff00;
         }
+        
         .sidebar h3 {
             margin-top: 0;
-            color: #ffcc00;
+            color: #00ff00;
+            text-align: center;
         }
+        
         .sidebar a {
-            display: block;
-            color: #fff;
+            display: inline-block;
+            color: #b8b8b8;
             text-decoration: none;
-            margin: 10px 0;
-            padding: 5px 0;
-            transition: color 0.2s;
+            margin: 5px 10px 5px 0;
+            padding: 5px 10px;
+            background: #333;
+            border-radius: 3px;
+            transition: all 0.2s;
         }
+        
         .sidebar a:hover {
-            color: #ffcc00;
+            color: #000000;
+            background: #00ff00;
+        }
+        
+
+        
+        /* Desktop styles */
+        @media (min-width: 1200px) {
+            .container {
+                display: flex;
+                gap: 10px;
+                align-items: flex-start;
+            }
+
+            .main-wrapper {
+                width: 800px;
+                max-width: 800px;
+            }
+            
+            .sidebar {
+                position: static;
+                margin-top: 11%;
+                width: 200px;
+                padding: 20px;
+                box-sizing: border-box;
+                background-color: #111;
+                border: 2px solid #333;
+                box-shadow: 0 0 20px #00ff0033;
+                height: fit-content;
+                flex-shrink: 0;
+            }
+
+            .sidebar h3 {
+                text-align: left;
+            }
+            
+            .sidebar a {
+                display: block;
+                margin: 10px 0;
+                padding: 5px 0;
+                background: none;
+                border-radius: 0;
+            }
+            
+            .cbox {
+                float: right;
+                width: 400px;
+                max-width: 100%;
+                margin-left: 20px;
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* Tablet styles */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .sidebar {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                text-align: center;
+                border: 1px solid #00ff00;
+            }
+            
+            .sidebar h3 {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        .kofi {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div id="header-image"><img src="assets/MothHeader.png"></div>
-        <div class="intro-txt">
-        <p>Hi my name is Mothie</p>
-        <p>I just like computers</p>
-        <p>Today is <span id="current-date"></span>.
+        <div class="main-wrapper">
+            <div class="banner">
+                <div id="header-image"><img src="assets/MothieBannerNoBG.png">
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="date-text">
+                <p>Today is <span id="current-date"></span>.
+                </div>
+                <div class="facts">
+                    <h2>Hi, I'm Mothie</h2>
+                    <ul>
+                        <li>I am a jack of all trades, master of none</li>
+                        <li>My main programming language is <strong>C++</strong>.</li>
+                        <li>I love horror and dark themes.</li>
+                        <li>I bounce between <a href="http://homelab.unholymoth.org">homelab</a> projects and <a href="https://scyllamander.itch.io/">gamedev</a> projects</li>
+                        <li>I spend most of my time learning new things</li>
+                        <li>I host and manage my own forum at <a href="https://forum.unholymoth.org">forum.unholymoth.org</a></li>
+                        <li>I went to school for game design and computer information systems</li>
+                        <li>I am currently looking for work in game dev, web dev or IT. Email me <a href="mailto:moth@unholymoth.org">here</a></li>
+                    </ul>
+                </div>
+                
+                <p style="text-align: center; margin-top: 30px; color: #666;">
+                    Made with evil and malice | 
+                </p>
+        <div class="kofi">
+            <!--    <a href='https://ko-fi.com/D1D41JA8SQ' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> -->
         </div>
-        <div class="facts">
-            <h2>Quick Bio:</h2>
-            <ul>
-                <li>I am a jack of all trades, master of none</li>
-                <li>My main programming language is <strong>C++</strong>.</li>
-                <li>I love <a href="pages/horror.html">horror</a> and <a href="games.html">games</a>.</li>
-                <li>I bounce between <a href="http://homelab.unholymoth.org">homelab</a> projects and <a href="https://scyllamander.itch.io/">gamedev</a> projects</li>
-                <li>I spend most of my time learning new things</li>
-                <li>I host and manage my own forum at <a href="https://forum.unholymoth.org">forum.unholymoth.org</a></li>
-                <li>I went to school for game design and computer information systems</li>
-                <li>I am currently looking for work in game dev, web dev or IT. Email me <a href="mailto:moth@unholymoth.org">here</a></li>
-            </ul>
-  
-</div>
-
-         
-
+            </div>
+        </div>
         
-        <p style="text-align: center; margin-top: 30px; color: #666;">
-            Made with evil and malice | 
-            <a href="https://github.com/scyllamander">GitHub</a>
-        </p>
-    </div>
-    <div class="sidebar">
-        <h3>Links</h3>
-        <a href="https://letterboxd.com/UnholyMothie/">Letterboxd</a><br>
-
-
-    </div>
-            <div class="cbox" style="float: right; width: 400px; max-width: 100%; margin-left: 20px; margin-bottom: 20px;">
-            <!-- Bravenet Embedded Service Code -->
-            <script src="https://apps.bravenet.com/go.js?service=guestbook;id=1;usernum=3343584229" type="text/javascript" charset="utf-8"></script>
+        <div class="sidebar">
+            <h3>Links</h3>
+            <a href="https://letterboxd.com/UnholyMothie/">Letterboxd</a>
+            <a href="https://scyllamander.itch.io/">Itch.io</a>
+            <a href="https://homelab.unholymoth.org/">Homelab</a>
+            <a href="https://forum.unholymoth.org">Forum</a>
+            <a href="assets/guestbook.html">Guestbook</a>
+            <a href="https://github.com/scyllamander">Github</a>
+            <a href="https://www.youtube.com/@mothermothie">YouTube</a>
+            <a href="https://bsky.app/profile/unholymoth.org">Bluesky</a>
+            <a href="https://ko-fi.com/unholymothie">Kofi</a>
         </div>
+    </div>
+    
+
+    
     <script>
-        // Set current date
         document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'
         });
-        
-
     </script>
 </body>
 </html>
