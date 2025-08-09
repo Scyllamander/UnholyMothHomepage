@@ -23,11 +23,19 @@
             align-items: flex-start;
             gap: 20px;
             padding: 20px;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             max-width: 1200px;
 
             margin: 0 auto;
+
         }
+        .sidebar-wrapper {
+        display: flex;
+        flex-direction: column; 
+        gap: 20px; 
+        width: 200px; 
+        
+    }
 
         .main-content {
             max-width: 800px;
@@ -222,7 +230,7 @@
             
             .sidebar {
                 position: static;
-                margin-top: 11%;
+                margin-top: 60%;
                 width: 200px;
                 padding: 20px;
                 box-sizing: border-box;
@@ -282,9 +290,10 @@
             background-color: #111;
             box-shadow: 0 0 20px #00ff0033;
             text-align: center;
-            margin-top: 5px;
-            margin-right: 20%;
-            margin-left: 65%;
+            margin-top: 20px;
+            padding: 10px;
+            width: 200px;
+            position: relative;
 
         }
         /* From Uiverse.io by Voxybuns */ 
@@ -334,9 +343,7 @@ button:active .button_top {
                 </div>
             </div>
             <div class="main-content">
-                <div class="date-text">
-                <p>Today is <span id="current-date"></span>.
-                </div>
+
                 <div class="facts">
                     <h2>Hi, I'm Mothie</h2>
                     <ul>
@@ -359,7 +366,7 @@ button:active .button_top {
         </div>
             </div>
         </div>
-        
+        <div class="siebar-wrapper">
         <div class="sidebar">
             <h3>Links</h3>
             <a href="https://letterboxd.com/UnholyMothie/">Letterboxd</a>
@@ -397,8 +404,8 @@ async function updateLiveIndicator() {
 updateLiveIndicator();
 setInterval(updateLiveIndicator, 60000);
 </script>
-
-
+</a>
+        </div>
     <div class="clicker">
         <p>Score: <span id="score">0</span></p>
         <button id="click-button">
@@ -416,7 +423,7 @@ setInterval(updateLiveIndicator, 60000);
             document.getElementById('click-button').addEventListener('click', increaseScore);
         </script>
     </div>
-    
+    </div>
 
 </body>
 </html>
