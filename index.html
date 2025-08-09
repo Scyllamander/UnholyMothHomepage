@@ -371,8 +371,33 @@ button:active .button_top {
             <a href="https://www.youtube.com/@mothermothie">YouTube</a>
             <a href="https://bsky.app/profile/unholymoth.org">Bluesky</a>
             <a href="https://ko-fi.com/unholymothie">Kofi</a>
-        </div>
-    </div>
+            <a href="https://www.twitch.tv/unholymothy" style="display: inline-flex; align-items: center;">
+<div>
+  <span>Twitch</span>
+  <span id="live-indicator" style="font-weight:bold; color:red; margin-left:8px;">Checking...</span>
+</div>
+
+<script>
+async function updateLiveIndicator() {
+    const username = 'UnholyMothy';
+    const res = await fetch(`https://api.ivr.fi/v2/twitch/user?login=${username}`);
+    const data = await res.json();
+
+    const indicator = document.getElementById('live-indicator');
+
+    if (data && data[0] && data[0].stream) {
+        indicator.textContent = 'LIVE NOW!';
+        indicator.style.color = 'green';
+    } else {
+        indicator.textContent = 'Offline';
+        indicator.style.color = 'red';
+    }
+}
+
+updateLiveIndicator();
+setInterval(updateLiveIndicator, 60000);
+</script>
+
 
     <div class="clicker">
         <p>Score: <span id="score">0</span></p>
@@ -393,13 +418,5 @@ button:active .button_top {
     </div>
     
 
-    
-    <script>
-        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-    </script>
 </body>
 </html>
